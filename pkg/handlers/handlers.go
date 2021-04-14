@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"bookings/pkg/config"
-	"bookings/pkg/models"
-	"bookings/pkg/render"
 	"net/http"
+
+	"github.com/HeadBangZ/bookings/pkg/config"
+	"github.com/HeadBangZ/bookings/pkg/models"
+	"github.com/HeadBangZ/bookings/pkg/render"
 )
 
 // Repo the repository used by the handlers

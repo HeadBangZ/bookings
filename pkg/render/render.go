@@ -1,14 +1,15 @@
 package render
 
 import (
-	"bookings/pkg/config"
-	"bookings/pkg/models"
 	"bytes"
 	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
+
+	"github.com/HeadBangZ/bookings/pkg/config"
+	"github.com/HeadBangZ/bookings/pkg/models"
 )
 
 var functions = template.FuncMap{}

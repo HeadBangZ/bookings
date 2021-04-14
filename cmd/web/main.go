@@ -1,14 +1,15 @@
 package main
 
 import (
-	"bookings/pkg/config"
-	"bookings/pkg/handlers"
-	"bookings/pkg/render"
 	"fmt"
-	"github.com/alexedwards/scs/v2"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/HeadBangZ/bookings/pkg/config"
+	"github.com/HeadBangZ/bookings/pkg/handlers"
+	"github.com/HeadBangZ/bookings/pkg/render"
+	"github.com/alexedwards/scs/v2"
 )
 
 const portNumber = ":8080"
