@@ -10,20 +10,7 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/css/datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
-    <style>
-        .footer-content {
-            background-color: #212529;
-            color: #fff;
-            margin-top: 1.5em;
-            height: 5em;
-            padding: 1em;
-            font-size: 80%;
-        }
-
-        .notie-container {
-            box-shadow: none;
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
@@ -159,7 +146,23 @@
         }
 
         document.querySelector('#myBtn').addEventListener('click', () => {
-            attention.error({ msg: "opps" });
+            let html = `
+                <form id="check-availability-form" action="" method="post" novalidate class="needs-validation">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row" id="reservation-dates-modal">
+                                <div class="col">
+                                    <input disabled required class="form-control" type="text" name="start" id="start" placeholder="Arrival">
+                                </div>
+                                <div class="col">
+                                    <input disabled required class="form-control" type="text" name="end" id="end" placeholder="Departure">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            `;
+            attention.custom({ msg: html, title: "Choose your dates" });
         });
 
         function Prompt() {
@@ -218,10 +221,47 @@
                 })
             }
 
+            async function custom(c) {
+                const {
+                    msg = "",
+                    title = "",
+                } = c;
+
+                const { value: formValues } = await Swal.fire({
+                    title: title,
+                    html: msg,
+                    backdrop: false,
+                    focusConfirm: false,
+                    showCancelButton: true,
+                    willOpen: () => {
+                        const elem = document.querySelector("#reservation-dates-modal");
+                        const rp = new DateRangePicker(elem, {
+                            format: 'yyyy-mm-dd',
+                            showOnFocus: true
+                        })
+                    },
+                    preConfirm: () => {
+                        return [
+                            document.getElementById('start').value,
+                            document.getElementById('end').value
+                        ]
+                    },
+                    didOpen: () => {
+                        document.querySelector('#start').removeAttribute('disabled');
+                        document.querySelector('#end').removeAttribute('disabled');
+                    }
+                })
+
+                if (formValues) {
+                    Swal.fire(JSON.stringify(formValues))
+                }
+            }
+
             return {
                 toast: toast,
                 success: success,
-                error: error
+                error: error,
+                custom: custom
             }
         }
     </script>
