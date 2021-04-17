@@ -61,7 +61,41 @@
                     </div>
                 </form>
             `;
-            attention.custom({ msg: html, title: "Choose your dates" });
+            attention.custom({
+                msg: html,
+                title: "Choose your dates",
+                willOpen: () => {
+                    const elem = document.querySelector("#reservation-dates-modal");
+                    const rp = new DateRangePicker(elem, {
+                        format: 'yyyy-mm-dd',
+                        showOnFocus: true
+                    })
+                },
+                preConfirm: () => {
+                    return [
+                        document.getElementById('start').value,
+                        document.getElementById('end').value
+                    ]
+                },
+                didOpen: () => {
+                    document.querySelector('#start').removeAttribute('disabled');
+                    document.querySelector('#end').removeAttribute('disabled');
+                },
+                callback: function() {
+                    let form = document.querySelector('#check-availability-form');
+                    let formData = new FormData(form);
+                    formData.append("csrf_token", "{{.CSRFToken}}")
+
+                    fetch('/search-availability-json', {
+                        method: 'post',
+                        body: formData
+                    }).then(response => response.json())
+                        .then(data => {
+                            console.log(data);
+                        }
+                    );
+                }
+            });
         });
     </script>
 {{end}}
