@@ -1,0 +1,22 @@
+mode: set
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:24.47,28.2 1 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:31.33,33.2 1 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:36.67,41.2 3 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:44.68,56.2 5 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:59.71,61.2 1 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:64.69,66.2 1 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:69.75,71.2 1 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:74.79,79.2 3 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:87.79,94.16 3 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:98.2,99.14 2 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:94.16,96.3 1 0
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:103.70,105.2 1 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:108.74,117.2 4 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:120.78,122.16 2 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:127.2,140.19 6 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:152.2,154.66 2 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:122.16,125.3 2 0
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:140.19,150.3 4 0
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:157.81,159.9 2 1
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:166.2,172.4 4 0
+github.com/HeadBangZ/bookings/internal/handlers/handlers.go:159.9,164.3 4 1

@@ -1,0 +1,18 @@
+mode: set
+github.com/HeadBangZ/bookings/internal/forms/errors.go:6.44,8.2 1 1
+github.com/HeadBangZ/bookings/internal/forms/errors.go:11.42,13.18 2 1
+github.com/HeadBangZ/bookings/internal/forms/errors.go:17.2,17.14 1 1
+github.com/HeadBangZ/bookings/internal/forms/errors.go:13.18,15.3 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:18.29,20.2 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:23.33,28.2 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:31.39,33.13 2 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:37.2,37.14 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:33.13,35.3 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:41.43,42.31 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:42.31,44.37 2 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:44.37,46.4 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:51.57,53.21 2 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:57.2,57.13 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:53.21,56.3 2 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:61.38,62.40 1 1
+github.com/HeadBangZ/bookings/internal/forms/forms.go:62.40,64.3 1 1

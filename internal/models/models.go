@@ -1,6 +1,6 @@
 package models
 
-// Holds Reservation data
+// Reservation holds reservation data
 type Reservation struct {
 	FirstName string
 	LastName  string
