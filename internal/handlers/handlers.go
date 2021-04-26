@@ -12,6 +12,7 @@ import (
 	"github.com/HeadBangZ/bookings/internal/config"
 	"github.com/HeadBangZ/bookings/internal/driver"
 	"github.com/HeadBangZ/bookings/internal/forms"
+	"github.com/HeadBangZ/bookings/internal/helpers"
 	"github.com/HeadBangZ/bookings/internal/models"
 	"github.com/HeadBangZ/bookings/internal/render"
 	"github.com/HeadBangZ/bookings/internal/repository"
@@ -497,6 +498,32 @@ func (m *Repository) Logout(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/user/login", http.StatusSeeOther)
 }
 
+// AdminDashboard takes you to the dashboard if you are authenticated
 func (m *Repository) AdminDashboard(w http.ResponseWriter, r *http.Request) {
 	render.Template(w, r, "admin-dashboard.page.tmpl", &models.TemplateData{})
+}
+
+// AdminNewReservations takes you to see list of new reservations
+func (m *Repository) AdminNewReservations(w http.ResponseWriter, r *http.Request) {
+	render.Template(w, r, "admin-new-reservations.page.tmpl", &models.TemplateData{})
+}
+
+// AdminAllReservations takes you to list with all reservations
+func (m *Repository) AdminAllReservations(w http.ResponseWriter, r *http.Request) {
+	reservations, err := m.DB.GetAllReservations()
+	if err != nil {
+		helpers.ServerError(w, err)
+		return
+	}
+	data := make(map[string]interface{})
+	data["reservations"] = reservations
+
+	render.Template(w, r, "admin-all-reservations.page.tmpl", &models.TemplateData{
+		Data: data,
+	})
+}
+
+// AdminReservationsCalendar shows the calendar of current reservations
+func (m *Repository) AdminReservationsCalendar(w http.ResponseWriter, r *http.Request) {
+	render.Template(w, r, "admin-reservations-calendar.page.tmpl", &models.TemplateData{})
 }
